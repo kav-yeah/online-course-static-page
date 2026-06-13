@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1:1 Discovery Session with Coach Snehal — Book for ₹49</title>
+  <meta name="description" content="Get clarity, remove blocks, and start manifesting the life you truly want. Book a private 30-minute discovery session with Coach Snehal for just ₹49.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================
+       LAYOUT B — DARK WARM EDITORIAL
+       Dark Warm Brown · Gold · Coral · Cream
+       ========================================================= */
+    :root {
+      --bg:       #0F0C06;
+      --surface:  #1A1408;
+      --surface2: #22190A;
+      --gold:     #E8A030;
+      --gold-dim: rgba(232,160,48,0.18);
+      --coral:    #D4562A;
+      --text:     #F0E5C8;
+      --muted:    #9A8F78;
+      --border:   rgba(232,160,48,0.18);
+      --white:    #FDFAF4;
+      --radius:   14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+    h1 { font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 700; line-height: 1.1; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem);   font-weight: 600; line-height: 1.2; }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.5rem);  font-weight: 600; }
+    p  { font-size: clamp(0.93rem,1.5vw,1.05rem); color: var(--muted); }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.4rem; }
+    .section   { padding: 5rem 0; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .95rem 2rem; border-radius: 50px; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+      transition: all .28s ease; white-space: nowrap; text-decoration: none;
+    }
+    .btn-gold {
+      background: var(--gold); color: #0F0C06;
+      box-shadow: 0 4px 20px rgba(232,160,48,.35);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,160,48,.5); }
+    .btn-outline {
+      background: transparent; color: var(--gold);
+      border: 1.5px solid var(--gold);
+    }
+    .btn-outline:hover { background: var(--gold-dim); }
+    .btn-lg { padding: 1.1rem 2.4rem; font-size: 1.08rem; }
+
+    /* ── STICKY CTA ── */
+    #sticky-cta {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999;
+      opacity: 0; transform: translateY(14px); pointer-events: none;
+      transition: opacity .38s, transform .38s;
+    }
+    #sticky-cta.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+    #sticky-cta .btn { font-size: .88rem; padding: .82rem 1.4rem; box-shadow: 0 6px 24px rgba(0,0,0,.4); }
+
+    /* ── TOP STRIP ── */
+    .top-strip {
+      background: var(--gold); color: #0F0C06;
+      text-align: center; padding: .55rem 1rem;
+      font-size: .8rem; font-weight: 700; letter-spacing: .02em;
+    }
+    .top-strip .dot {
+      display: inline-block; width: 7px; height: 7px; background: #0F0C06;
+      border-radius: 50%; margin-right: 6px; animation: pulse 1.6s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+    /* ── STICKY NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 900;
+      background: rgba(15,12,6,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 0;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 700; color: var(--gold);
+    }
+    .nav-cta { display: none; }
+    @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+
+    /* ================================================
+       HERO — Full-screen image with dark overlay
+       ================================================ */
+    .hero {
+      min-height: 100svh;
+      background:
+        linear-gradient(to bottom,
+          rgba(15,12,6,.52) 0%,
+          rgba(15,12,6,.78) 60%,
+          rgba(15,12,6,.96) 100%),
+        url('hero-image.jpg') center / cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 5rem 1.4rem 4rem;
+      position: relative;
+    }
+    .hero-inner { max-width: 780px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: var(--gold-dim); border: 1px solid var(--gold);
+      color: var(--gold); padding: .35rem 1rem; border-radius: 50px;
+      font-size: .78rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .06em; margin-bottom: 1.5rem;
+    }
+    .hero h1 { color: var(--white); margin-bottom: 1.25rem; }
+    .hero h1 .hl { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      font-size: clamp(1rem,2vw,1.2rem); color: rgba(240,229,200,.8);
+      max-width: 600px; margin: 0 auto 2rem;
+    }
+    .hero-cta-group { display: flex; flex-wrap: wrap; gap: .85rem; justify-content: center; margin-bottom: 1.5rem; }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; justify-content: center;
+      font-size: .82rem; color: rgba(240,229,200,.6);
+    }
+    .hero-trust span { display: flex; align-items: center; gap: .3rem; }
+    .spots-badge {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: rgba(212,86,42,.2); border: 1.5px solid var(--coral);
+      color: #F59070; padding: .45rem 1rem; border-radius: 8px;
+      font-size: .83rem; font-weight: 600; margin-bottom: 1.4rem;
+    }
+    /* Scroll arrow */
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      color: rgba(232,160,48,.5); font-size: .78rem; text-align: center;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+    /* ================================================
+       PAIN POINTS — Open text blocks, no card boxes
+       ================================================ */
+    .pain-section { background: var(--surface); }
+    .pain-label {
+      font-size: .75rem; text-transform: uppercase; letter-spacing: .12em;
+      color: var(--gold); font-weight: 600; margin-bottom: 1rem;
+    }
+    .pain-section h2 { color: var(--white); margin-bottom: 3rem; }
+    .pain-list { display: grid; grid-template-columns: 1fr; gap: 0; }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: 1.25rem;
+      padding: 1.3rem 0; border-bottom: 1px solid var(--border);
+      transition: padding-left .22s;
+    }
+    .pain-item:first-child { border-top: 1px solid var(--border); }
+    .pain-item:hover { padding-left: .5rem; }
+    .pain-no {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: var(--gold); flex-shrink: 0;
+      width: 2rem; margin-top: .1rem;
+    }
+    .pain-item p { color: var(--text); font-size: 1rem; margin: 0; }
+    .pain-item p strong { color: var(--white); }
+
+    /* ================================================
+       LIFE AREAS — Flowing tags/pills
+       ================================================ */
+    .areas-section { background: var(--bg); }
+    .areas-section h2 { color: var(--white); margin-bottom: 0.5rem; }
+    .areas-section > .container > p { max-width: 600px; margin-bottom: 2.5rem; }
+    .areas-pills { display: flex; flex-wrap: wrap; gap: .85rem; }
+    .area-pill {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .75rem 1.4rem; border-radius: 50px;
+      border: 1.5px solid var(--border); background: var(--surface2);
+      font-size: .95rem; color: var(--text); transition: all .25s;
+      cursor: default;
+    }
+    .area-pill:hover {
+      border-color: var(--gold); background: var(--gold-dim); color: var(--white);
+    }
+    .area-pill .icon { font-size: 1.3rem; }
+
+    /* ================================================
+       SESSION — Horizontal timeline
+       ================================================ */
+    .session-section { background: var(--surface); }
+    .session-section h2 { color: var(--white); margin-bottom: 0.5rem; }
+    .session-section > .container > p { margin-bottom: 3.5rem; }
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      display: none; /* shown on desktop */
+    }
+    .t-step { position: relative; padding-left: 0; }
+    .t-circle {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--gold); color: #0F0C06;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700;
+      margin-bottom: 1rem; flex-shrink: 0;
+    }
+    .t-step h3 { color: var(--white); margin-bottom: .4rem; font-size: 1.1rem; }
+    .t-step p  { font-size: .9rem; margin: 0; }
+    .lang-bar {
+      margin-top: 2.5rem; padding: 1.1rem 1.5rem;
+      background: var(--gold-dim); border: 1px solid var(--gold);
+      border-radius: var(--radius); color: var(--text); font-size: .9rem;
+    }
+    .lang-bar strong { color: var(--gold); }
+
+    /* ================================================
+       MANIFESTATION — Large typographic blocks
+       ================================================ */
+    .manifest-section { background: var(--bg); }
+    .manifest-section h2 { color: var(--white); margin-bottom: .5rem; }
+    .manifest-section > .container > p { margin-bottom: 3rem; }
+    .manifest-list { display: grid; grid-template-columns: 1fr; gap: 0; }
+    .m-row {
+      display: flex; align-items: flex-start; gap: 1.5rem;
+      padding: 1.6rem 0; border-bottom: 1px solid var(--border);
+    }
+    .m-row:first-child { border-top: 1px solid var(--border); }
+    .m-big-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem,5vw,3.5rem); font-weight: 700;
+      color: var(--gold-dim); color: rgba(232,160,48,0.25);
+      line-height: 1; flex-shrink: 0; width: 3.5rem; margin-top: -.2rem;
+    }
+    .m-content h3 { color: var(--gold); margin-bottom: .35rem; font-size: 1.15rem; }
+    .m-content p  { font-size: .93rem; margin: 0; }
+
+    /* ================================================
+       ABOUT — Full-width asymmetric
+       ================================================ */
+    .about-section { background: var(--surface); }
+    .about-wrap { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+    .about-illo { display: flex; justify-content: center; }
+    .about-illo svg { max-width: 260px; width: 100%; }
+    .about-tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+    .a-tag {
+      background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold);
+      padding: .28rem .85rem; border-radius: 50px; font-size: .78rem; font-weight: 500;
+    }
+    .about-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); font-weight: 600; margin-bottom: .8rem; }
+    .about-content h2 { color: var(--white); margin-bottom: 1rem; }
+    .about-content p  { margin-bottom: .85rem; }
+    .pull-quote {
+      margin: 1.5rem 0; padding: 1.2rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem,2vw,1.35rem); font-style: italic;
+      color: var(--text); line-height: 1.55;
+    }
+
+    /* ================================================
+       TESTIMONIALS — Open quotes, no boxes
+       ================================================ */
+    .test-section { background: var(--bg); }
+    .test-section h2 { color: var(--white); margin-bottom: .5rem; }
+    .test-section > .container > p { margin-bottom: 3rem; }
+    .test-list { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+    .t-quote { position: relative; }
+    .t-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem; line-height: .8;
+      color: var(--gold); opacity: .25;
+      position: absolute; top: -1rem; left: -0.5rem;
+      pointer-events: none;
+    }
+    .t-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem,2vw,1.3rem); font-style: italic;
+      color: var(--text); line-height: 1.65; padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .t-attr {
+      display: flex; align-items: center; gap: .85rem;
+      padding-left: 1.5rem;
+    }
+    .t-dash { width: 28px; height: 2px; background: var(--gold); }
+    .t-name { font-size: .9rem; font-weight: 600; color: var(--white); }
+    .t-role { font-size: .8rem; color: var(--muted); }
+    .stars { color: var(--gold); font-size: .85rem; margin-bottom: .5rem; padding-left: 1.5rem; }
+
+    /* ================================================
+       FAQ — Two-column table layout (no accordion)
+       ================================================ */
+    .faq-section { background: var(--surface); }
+    .faq-section h2 { color: var(--white); margin-bottom: .5rem; }
+    .faq-section > .container > p { margin-bottom: 3rem; }
+    .faq-table { display: grid; grid-template-columns: 1fr; gap: 0; }
+    .faq-row {
+      display: grid; grid-template-columns: 1fr;
+      gap: .5rem; padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-row:first-child { border-top: 1px solid var(--border); }
+    .faq-q-text { font-weight: 600; color: var(--gold); font-size: .97rem; }
+    .faq-a-text { color: var(--muted); font-size: .93rem; }
+
+    /* ================================================
+       BOOKING — Split screen
+       ================================================ */
+    .booking-section { background: var(--bg); }
+    .booking-split {
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+    }
+    /* Left panel */
+    .book-left h2 { color: var(--white); margin-bottom: 1rem; }
+    .book-left > p { margin-bottom: 2rem; }
+    .v-list { display: grid; gap: 0; }
+    .v-row {
+      display: flex; align-items: flex-start; gap: .85rem;
+      padding: .9rem 0; border-bottom: 1px solid var(--border);
+    }
+    .v-row:first-child { border-top: 1px solid var(--border); }
+    .v-check { color: var(--gold); font-size: 1rem; flex-shrink: 0; margin-top: .15rem; }
+    .v-row p { color: var(--text); margin: 0; font-size: .93rem; }
+    /* Right panel */
+    .book-right {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem; text-align: center;
+    }
+    .book-right .price-label { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: .4rem; }
+    .big-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem; font-weight: 700; color: var(--gold);
+      line-height: 1; margin-bottom: .25rem;
+    }
+    .price-sub { font-size: .82rem; color: var(--muted); margin-bottom: 2rem; }
+    /* Countdown */
+    .cd-wrap { margin-bottom: 1.75rem; }
+    .cd-label { font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: .65rem; }
+    .cd-timer { display: flex; justify-content: center; align-items: flex-start; gap: .6rem; }
+    .cd-unit { text-align: center; min-width: 52px; }
+    .cd-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--gold); display: block; line-height: 1;
+    }
+    .cd-sep { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .cd-sub { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: .2rem; }
+    .spots-warn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: rgba(212,86,42,.15); border: 1px solid var(--coral);
+      color: #F07050; padding: .5rem 1rem; border-radius: 8px;
+      font-size: .82rem; font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .cta-note { color: var(--muted); font-size: .78rem; margin-top: .9rem; }
+
+    /* ================================================
+       FOOTER
+       ================================================ */
+    .footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; }
+    .foot-social { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+    .soc-link {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s, color .2s;
+    }
+    .soc-link:hover { border-color: var(--gold); color: var(--gold); }
+    .foot-copy { font-size: .78rem; color: var(--muted); line-height: 1.9; }
+    .foot-copy a { color: var(--gold); }
+
+    /* ── FADE IN ── */
+    .fi { opacity: 0; transform: translateY(20px); transition: opacity .55s, transform .55s; }
+    .fi.show { opacity: 1; transform: translateY(0); }
+    .fi.d1 { transition-delay: .1s; }
+    .fi.d2 { transition-delay: .2s; }
+    .fi.d3 { transition-delay: .3s; }
+
+    /* ── RESPONSIVE: TABLET ── */
+    @media (min-width: 640px) {
+      .pain-list { grid-template-columns: 1fr; }
+      .timeline   { grid-template-columns: repeat(2,1fr); }
+      .faq-row    { grid-template-columns: 1fr 1.5fr; gap: 1.5rem; }
+      .test-list  { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 768px) {
+      .about-wrap { grid-template-columns: 1fr 1.4fr; }
+      .timeline   { grid-template-columns: repeat(4,1fr); position: relative; }
+      .timeline::before {
+        display: block; content: '';
+        position: absolute; top: 24px; left: 24px; right: 24px; height: 2px;
+        background: linear-gradient(to right, var(--gold), rgba(232,160,48,.2));
+        z-index: 0;
+      }
+      .t-step { z-index: 1; }
+      .test-list { grid-template-columns: repeat(3,1fr); gap: 2.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .section { padding: 6rem 0; }
+      .booking-split { grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
+      .about-illo svg { max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip">
+  <span class="dot"></span>
+  Only <span id="spots-bar">10</span> discovery sessions open this month — spots filling fast
+</div>
+
+<!-- STICKY NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">Coach Snehal</div>
+    <a href="YOUR_RAZORPAY_LINK_HERE" class="btn btn-gold nav-cta" target="_blank" rel="noopener"
+       style="padding:.6rem 1.4rem;font-size:.85rem;">
+      Book for ₹49 →
+    </a>
+  </div>
+</nav>
+
+<!-- STICKY FLOATING CTA -->
+<div id="sticky-cta">
+  <a href="YOUR_RAZORPAY_LINK_HERE" class="btn btn-gold" target="_blank" rel="noopener">
+    📅 Book for ₹49 — Limited Spots
+  </a>
+</div>
+
+<!-- ================================================
+     HERO — Full-screen image background
+     ================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-inner fi">
+    <div class="hero-badge">✨ 1:1 Private Session · 30 Min · ₹49 Only</div>
+    <h1>
+      One Conversation Can <span class="hl">Change Everything</span><br>
+      You Thought Was Out of Reach
+    </h1>
+    <p class="hero-sub">
+      Feel stuck, unclear, or like something invisible is holding you back?
+      Book a private 30-minute session with Coach Snehal and walk away with
+      the clarity, direction, and breakthrough that changes your next chapter.
+    </p>
+    <div class="spots-badge fi d1">
+      🔥 Only <strong id="spots-hero">10</strong> spots left this month
+    </div>
+    <div class="hero-cta-group fi d1">
+      <a href="YOUR_RAZORPAY_LINK_HERE" class="btn btn-gold btn-lg" target="_blank" rel="noopener">
+        📅 Book My Discovery Session — ₹49
+      </a>
+    </div>
+    <div class="hero-trust fi d2">
+      <span>✅ Online via Zoom/Meet</span>
+      <span>✅ Hindi &amp; English</span>
+      <span>✅ Real clarity, zero fluff</span>
+      <span>✅ Immediate action step</span>
+    </div>
+  </div>
+  <div class="scroll-hint">↓ Scroll to explore</div>
+</section>
+
+<!-- ================================================
+     PAIN POINTS — Open list layout
+     ================================================ -->
+<section class="section pain-section">
+  <div class="container">
+    <p class="pain-label fi">Does This Sound Like You?</p>
+    <h2 class="fi d1">
+      You're Not Broken.<br>
+      <span style="color:var(--gold);font-style:italic;">You're Just Missing Clarity.</span>
+    </h2>
+    <div class="pain-list" style="margin-top:2.5rem;">
+      <div class="pain-item fi d1">
+        <span class="pain-no">01</span>
+        <p>"I <strong>know</strong> I'm capable of so much more — but I don't know where to even begin."</p>
+      </div>
+      <div class="pain-item fi d1">
+        <span class="pain-no">02</span>
+        <p>"I feel <strong>stuck in the same loop</strong> — no matter how hard I try, nothing moves."</p>
+      </div>
+      <div class="pain-item fi d2">
+        <span class="pain-no">03</span>
+        <p>"Something is <strong>blocking me</strong>, but I can't figure out what it is."</p>
+      </div>
+      <div class="pain-item fi d2">
+        <span class="pain-no">04</span>
+        <p>"I've <strong>read the books, tried the goals</strong>, watched the videos — still nothing changes."</p>
+      </div>
+      <div class="pain-item fi d3">
+        <span class="pain-no">05</span>
+        <p>"I desperately want a <strong>breakthrough</strong> — I just don't know how to make it happen."</p>
+      </div>
+      <div class="pain-item fi d3">
+        <span class="pain-no">06</span>
+        <p>"I'm <strong>carrying too much alone</strong> — health, finances, family, purpose — all at once."</p>
+      </div>
+    </div>
+    <p style="margin-top:2.5rem;color:var(--gold);font-size:1rem;font-weight:600;" class="fi">
+      If you nodded at even one of these — this session is exactly for you. ↓
+    </p>
+  </div>
+</section>
+
+<!-- ================================================
+     LIFE AREAS — Flowing pills
+     ================================================ -->
+<section class="section areas-section">
+  <div class="container">
+    <h2 class="fi">Every Area of Life Can Transform</h2>
+    <p class="fi d1" style="max-width:580px;margin:.75rem 0 2.5rem;">
+      In a single discovery session we identify which area needs the most attention — then build a clear path forward together.
+    </p>
+    <div class="areas-pills">
+      <div class="area-pill fi d1"><span class="icon">🌿</span> Health &amp; Body</div>
+      <div class="area-pill fi d1"><span class="icon">💰</span> Wealth &amp; Finances</div>
+      <div class="area-pill fi d2"><span class="icon">🚀</span> Career &amp; Growth</div>
+      <div class="area-pill fi d2"><span class="icon">❤️</span> Relationships &amp; Love</div>
+      <div class="area-pill fi d3"><span class="icon">🧠</span> Mental Clarity &amp; Focus</div>
+      <div class="area-pill fi d3"><span class="icon">☮️</span> Inner Peace &amp; Purpose</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SESSION BREAKDOWN — Horizontal timeline
+     ================================================ -->
+<section class="section session-section">
+  <div class="container">
+    <h2 class="fi">What Happens in Your 30-Minute Session</h2>
+    <p class="fi d1">No fluff. No vague advice. One focused conversation that shifts everything.</p>
+    <div class="timeline" style="margin-top:3rem;">
+      <div class="t-step fi d1">
+        <div class="t-circle">1</div>
+        <h3>Uncover Your Hidden Block</h3>
+        <p>We identify the real reason you've been stuck — often it's not what you think.</p>
+      </div>
+      <div class="t-step fi d1">
+        <div class="t-circle">2</div>
+        <h3>Crystallise What You Truly Want</h3>
+        <p>We get precise about your core desire and why it matters so deeply to you.</p>
+      </div>
+      <div class="t-step fi d2">
+        <div class="t-circle">3</div>
+        <h3>Get a Personalised Direction</h3>
+        <p>You receive a clear path tailored to your unique situation — not generic advice.</p>
+      </div>
+      <div class="t-step fi d2">
+        <div class="t-circle">4</div>
+        <h3>Your First Action Step</h3>
+        <p>Walk away with one concrete step that creates real momentum immediately.</p>
+      </div>
+    </div>
+    <div class="lang-bar fi" style="margin-top:3rem;">
+      🗣️ <strong>Comfortable in your language:</strong> Coach Snehal conducts sessions in both <strong>English</strong> and <strong>Hindi</strong> — whichever feels most natural for you.
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     MANIFESTATION — Typographic list
+     ================================================ -->
+<section class="section manifest-section">
+  <div class="container">
+    <h2 class="fi">The Truth About Manifestation</h2>
+    <p class="fi d1" style="max-width:600px;margin:.75rem 0 1rem;">
+      Manifestation isn't wishful thinking — it's a precise shift in who you are on the inside.
+    </p>
+    <div class="manifest-list" style="margin-top:2rem;">
+      <div class="m-row fi d1">
+        <span class="m-big-num">01</span>
+        <div class="m-content"><h3>Clear Intention</h3><p>Know exactly what you want. Feel it vividly. Commit to it with all your senses.</p></div>
+      </div>
+      <div class="m-row fi d1">
+        <span class="m-big-num">02</span>
+        <div class="m-content"><h3>Elevated Emotions</h3><p>Feel the joy of already having your desire — before it arrives in your reality.</p></div>
+      </div>
+      <div class="m-row fi d2">
+        <span class="m-big-num">03</span>
+        <div class="m-content"><h3>Identity Shift</h3><p>You don't manifest what you desire. You manifest what you <em style="color:var(--gold)">are</em>. Become that version now.</p></div>
+      </div>
+      <div class="m-row fi d2">
+        <span class="m-big-num">04</span>
+        <div class="m-content"><h3>Present Moment Power</h3><p>Manifestation happens now — not in the past you regret or the future you fear.</p></div>
+      </div>
+      <div class="m-row fi d3">
+        <span class="m-big-num">05</span>
+        <div class="m-content"><h3>Surrender &amp; Trust</h3><p>Release the how. Surrender to the process and trust the intelligence of life.</p></div>
+      </div>
+      <div class="m-row fi d3">
+        <span class="m-big-num">06</span>
+        <div class="m-content"><h3>Embodied Action</h3><p>Become the person who already has what they desire — then take the aligned next step.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     ABOUT — Asymmetric with pull quote
+     ================================================ -->
+<section class="section about-section">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-illo fi">
+        <svg viewBox="0 0 280 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coach Snehal portrait sketch">
+          <defs>
+            <radialGradient id="abg" cx="50%" cy="55%" r="50%">
+              <stop offset="0%" stop-color="#E8A030" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#0F0C06" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="140" cy="180" rx="132" ry="136" fill="url(#abg)"/>
+          <circle cx="140" cy="180" r="128" fill="none" stroke="#E8A030" stroke-width="1" stroke-dasharray="6 12" opacity="0.3"/>
+          <!-- Body -->
+          <path d="M74 316 Q82 264 92 238 Q101 216 112 205 L140 220 L168 205 Q179 216 188 238 Q198 264 206 316Z"
+                fill="#2A1E0A" stroke="#E8A030" stroke-width="1.5"/>
+          <path d="M128 205 Q140 219 152 205" fill="none" stroke="rgba(232,160,48,0.4)" stroke-width="1.8"/>
+          <!-- Neck -->
+          <rect x="133" y="170" width="14" height="36" rx="5" fill="#D4956A" stroke="#B07040" stroke-width="1"/>
+          <!-- Short hair -->
+          <path d="M96 122 Q100 74 122 58 Q140 48 158 58 Q180 74 184 122 Q171 104 140 100 Q109 104 96 122Z" fill="#3D2105"/>
+          <path d="M108 82 Q140 72 172 82" fill="none" stroke="#5C3010" stroke-width="1.4" opacity="0.38"/>
+          <path d="M100 100 Q140 90 180 100" fill="none" stroke="#5C3010" stroke-width="1.1" opacity="0.26"/>
+          <!-- Sideburns -->
+          <path d="M96 122 Q94 137 96 158" stroke="#3D2105" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <path d="M184 122 Q186 137 184 158" stroke="#3D2105" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <!-- Face -->
+          <ellipse cx="140" cy="132" rx="46" ry="52" fill="#D4956A"/>
+          <!-- Stubble -->
+          <path d="M100 155 Q106 183 122 194 Q140 200 158 194 Q174 183 180 155" fill="#A06030" opacity="0.15"/>
+          <!-- Eyebrows -->
+          <path d="M116 113 Q127 107 137 110" stroke="#3D2105" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M143 110 Q153 107 164 113" stroke="#3D2105" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Eyes -->
+          <ellipse cx="127" cy="123" rx="8.5" ry="7.5" fill="white"/>
+          <ellipse cx="153" cy="123" rx="8.5" ry="7.5" fill="white"/>
+          <circle cx="128" cy="124" r="5" fill="#2D1500"/>
+          <circle cx="154" cy="124" r="5" fill="#2D1500"/>
+          <circle cx="130" cy="122" r="1.6" fill="white"/>
+          <circle cx="156" cy="122" r="1.6" fill="white"/>
+          <!-- Nose -->
+          <path d="M137 137 Q135 146 140 149 Q145 146 143 137" stroke="#A06030" stroke-width="1.6" fill="none"/>
+          <!-- Lips -->
+          <path d="M128 163 Q135 159 140 161 Q145 159 152 163" stroke="#9A5040" stroke-width="2" fill="none"/>
+          <path d="M128 163 Q135 170 140 171 Q145 170 152 163" fill="#A55848"/>
+          <!-- Sparkles gold -->
+          <text x="32" y="76"  font-size="15" fill="#E8A030" opacity="0.7">✦</text>
+          <text x="228" y="62" font-size="11" fill="#E8A030" opacity="0.7">✦</text>
+          <text x="238" y="198" font-size="9" fill="#E8A030" opacity="0.55">✦</text>
+          <text x="20"  y="208" font-size="9" fill="#E8A030" opacity="0.55">✦</text>
+        </svg>
+      </div>
+      <div class="about-content fi d1">
+        <p class="about-label">Your Guide</p>
+        <h2>Meet Coach <span style="color:var(--gold)">Snehal</span></h2>
+        <p>Snehal is a life clarity and manifestation coach who has helped hundreds of people — IT professionals, homemakers, young adults, and seniors — break free from the invisible patterns that hold them back.</p>
+        <div class="pull-quote">
+          "Every person who walks into a conversation with me carries the answer already. My job is to help them hear it clearly for the first time."
+        </div>
+        <p>Whether you're navigating career confusion, financial anxiety, relationship challenges, or simply a quiet feeling of "there must be something more" — Snehal meets you exactly where you are.</p>
+        <div class="about-tag-row">
+          <span class="a-tag">🌿 Manifestation Coach</span>
+          <span class="a-tag">💬 Hindi &amp; English</span>
+          <span class="a-tag">🎯 Clarity Expert</span>
+          <span class="a-tag">❤️ Judgment-Free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     TESTIMONIALS — Open quote style
+     ================================================ -->
+<section class="section test-section">
+  <div class="container">
+    <h2 class="fi">Real People. <span style="color:var(--gold);font-style:italic;">Real Breakthroughs.</span></h2>
+    <p class="fi d1">Here's what people said after their discovery session with Snehal.</p>
+    <div class="test-list" style="margin-top:3rem;">
+
+      <div class="t-quote fi d1">
+        <div class="t-quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="t-body">I was skeptical — how much can a 30-minute call really do? But Snehal helped me identify the exact belief that was keeping me from asking for the promotion I deserved. Three weeks later, I had the conversation and got it. Worth every rupee and more.</p>
+        <div class="t-attr">
+          <div class="t-dash"></div>
+          <div><div class="t-name">Riya M.</div><div class="t-role">IT Professional, Bengaluru</div></div>
+        </div>
+      </div>
+
+      <div class="t-quote fi d2">
+        <div class="t-quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="t-body">I've been going in circles for two years — reading books, watching videos, nothing stuck. In one session with Snehal, I had more clarity than I'd had in months. He has a gift for cutting through the noise and getting straight to the core.</p>
+        <div class="t-attr">
+          <div class="t-dash"></div>
+          <div><div class="t-name">Aakash T.</div><div class="t-role">HR Manager, Mumbai</div></div>
+        </div>
+      </div>
+
+      <div class="t-quote fi d3">
+        <div class="t-quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="t-body">I'm a homemaker — but Snehal never made me feel small or unimportant. He helped me rediscover what I truly want for myself, not just for my family. I finally feel like I have a real purpose again. I recommend this to everyone who feels like they've lost their direction.</p>
+        <div class="t-attr">
+          <div class="t-dash"></div>
+          <div><div class="t-name">Priya S.</div><div class="t-role">Homemaker, Pune</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FAQ — Two-column table (no accordion)
+     ================================================ -->
+<section class="section faq-section">
+  <div class="container">
+    <h2 class="fi">Your Questions, <span style="color:var(--gold);font-style:italic;">Answered</span></h2>
+    <p class="fi d1">Everything you need to know before taking the leap.</p>
+    <div class="faq-table" style="margin-top:2.5rem;">
+      <div class="faq-row fi d1">
+        <div class="faq-q-text">Is the session online or in person?</div>
+        <div class="faq-a-text">100% online via Zoom or Google Meet — from wherever you feel most at ease. All you need is a phone or laptop and a quiet 30 minutes.</div>
+      </div>
+      <div class="faq-row fi d1">
+        <div class="faq-q-text">What happens after I pay ₹49?</div>
+        <div class="faq-a-text">You'll be redirected to WhatsApp where you'll connect directly with Coach Snehal's team to pick a time slot and get everything you need before the session.</div>
+      </div>
+      <div class="faq-row fi d2">
+        <div class="faq-q-text">Can the session be in Hindi?</div>
+        <div class="faq-a-text">Absolutely. Coach Snehal is fully comfortable in both Hindi and English. Just let him know your preference on WhatsApp and the entire session will flow in that language.</div>
+      </div>
+      <div class="faq-row fi d2">
+        <div class="faq-q-text">Will this actually work for someone like me?</div>
+        <div class="faq-a-text">The session works for anyone willing to be honest — whether you're an IT professional, a homemaker, a student, or someone in their 50s. If you show up ready, the session delivers real value.</div>
+      </div>
+      <div class="faq-row fi d3">
+        <div class="faq-q-text">Is there a refund policy?</div>
+        <div class="faq-a-text">Since your slot is reserved exclusively for you, we don't offer refunds. However, if you need to reschedule, reach out on WhatsApp and we'll find another time for you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     BOOKING — Split screen
+     ================================================ -->
+<section class="section booking-section">
+  <div class="container">
+    <div class="booking-split">
+
+      <!-- Left: value proposition -->
+      <div class="book-left fi">
+        <h2>
+          Your Breakthrough Is<br>
+          <span style="color:var(--gold);font-style:italic;">One Step Away</span>
+        </h2>
+        <p style="margin:.85rem 0 2rem;">Don't let another month pass wondering "what if." Take the step today.</p>
+        <div class="v-list">
+          <div class="v-row"><span class="v-check">✔</span><p><strong>30-min private 1:1 session</strong> with Coach Snehal — fully focused on you</p></div>
+          <div class="v-row"><span class="v-check">✔</span><p><strong>Identify your #1 hidden block</strong> — the real reason you've been stuck</p></div>
+          <div class="v-row"><span class="v-check">✔</span><p><strong>Clarity on exactly what you want</strong> and a personalised path to get there</p></div>
+          <div class="v-row"><span class="v-check">✔</span><p><strong>One concrete action step</strong> to create real momentum starting today</p></div>
+          <div class="v-row"><span class="v-check">✔</span><p><strong>Session in Hindi or English</strong> — your choice, your comfort</p></div>
+        </div>
+      </div>
+
+      <!-- Right: countdown + CTA -->
+      <div class="book-right fi d1">
+        <p class="price-label">One-time investment</p>
+        <div class="big-price">₹49</div>
+        <p class="price-sub">Less than a chai and samosa · Completely worth it</p>
+
+        <div class="cd-wrap">
+          <p class="cd-label">⏳ Offer expires in</p>
+          <div class="cd-timer">
+            <div class="cd-unit"><span class="cd-num" id="cd-hours">48</span><div class="cd-sub">Hrs</div></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-minutes">00</span><div class="cd-sub">Min</div></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-seconds">00</span><div class="cd-sub">Sec</div></div>
+          </div>
+        </div>
+
+        <div class="spots-warn">
+          🔥 Only <strong id="spots-final" style="margin:0 4px;">10</strong> spots remaining
+        </div>
+
+        <a href="YOUR_RAZORPAY_LINK_HERE" class="btn btn-gold btn-lg" target="_blank" rel="noopener"
+           style="width:100%;margin-bottom:.75rem;">
+          📅 Yes, I Want Clarity — Book for ₹49
+        </a>
+
+        <p class="cta-note">
+          🔒 Secure via Razorpay · After payment you'll be redirected to WhatsApp to schedule your time
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-social">
+      <a href="YOUR_INSTAGRAM_URL_HERE" class="soc-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="YOUR_YOUTUBE_URL_HERE" class="soc-link" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47a2.78 2.78 0 0 0-1.95 1.95C1 8.12 1 12 1 12s0 3.88.46 5.58a2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95C23 15.88 23 12 23 12s0-3.88-.46-5.58z"/>
+          <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </div>
+    <div class="foot-copy">
+      © 2026 Coach Snehal · All Rights Reserved<br>
+      <span style="font-size:.72rem;opacity:.45;">Made with ❤️ for your transformation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // COUNTDOWN
+  (function(){
+    var KEY='snehal_cd_end', H=48;
+    var end=localStorage.getItem(KEY);
+    if(!end||isNaN(+end)||+end<Date.now()){end=Date.now()+H*3600000;localStorage.setItem(KEY,end);}
+    end=+end;
+    function pad(n){return('0'+n).slice(-2);}
+    function tick(){
+      var r=Math.max(0,end-Date.now());
+      var h=document.getElementById('cd-hours');
+      var m=document.getElementById('cd-minutes');
+      var s=document.getElementById('cd-seconds');
+      if(h) h.textContent=pad(Math.floor(r/3600000));
+      if(m) m.textContent=pad(Math.floor((r%3600000)/60000));
+      if(s) s.textContent=pad(Math.floor((r%60000)/1000));
+      if(r>0) setTimeout(tick,1000);
+    }
+    tick();
+  }());
+
+  // SPOTS
+  (function(){
+    var KEY='snehal_spots', spots=localStorage.getItem(KEY);
+    if(!spots||isNaN(+spots)){spots=Math.floor(Math.random()*4)+7;localStorage.setItem(KEY,spots);}
+    document.querySelectorAll('#spots-bar,#spots-hero,#spots-final').forEach(function(el){el.textContent=spots;});
+  }());
+
+  // STICKY CTA
+  (function(){
+    var hero=document.getElementById('hero');
+    var btn=document.getElementById('sticky-cta');
+    if(!hero||!btn) return;
+    new IntersectionObserver(function(e){btn.classList.toggle('visible',!e[0].isIntersecting);},{threshold:.1}).observe(hero);
+  }());
+
+  // FADE IN
+  (function(){
+    var els=document.querySelectorAll('.fi');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('show');});return;}
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target);}});
+    },{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+    els.forEach(function(e){obs.observe(e);});
+  }());
+</script>
+
+</body>
+</html>
